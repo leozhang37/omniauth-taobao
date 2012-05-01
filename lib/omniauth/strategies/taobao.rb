@@ -39,7 +39,7 @@ module OmniAuth
           :method => 'taobao.user.get',
           :session => @access_token.token,
           :sign_method => 'md5',
-          :timestamp   => Time.now.strftime('%Y-%m-%d %H:%M:%S'),
+          :timestamp   => Time.now.utc.localtime("+08:00").strftime("%Y-%m-%d %H:%M:%S"),
           :v => '2.0'
         }
         query_param = generate_sign(query_param)
