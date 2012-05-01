@@ -4,8 +4,8 @@ module OmniAuth
   module Strategies
     class Taobao < OmniAuth::Strategies::OAuth2
       option :client_options, {
-        :authorize_url => Rails.env.production? ? 'https://oauth.taobao.com/authorize' : 'http://oauth.tbsandbox.com/authorize',
-        :token_url => Rails.env.production? ? 'https://oauth.taobao.com/token' : 'http://oauth.tbsandbox.com/token',
+        :authorize_url => Rails.env.production? ? 'https://oauth.taobao.com/authorize' : 'https://oauth.tbsandbox.com/authorize',
+        :token_url => Rails.env.production? ? 'https://oauth.taobao.com/token' : 'https://oauth.tbsandbox.com/token',
       }
       def request_phase
         options[:state] ||= '1'
